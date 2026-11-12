@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nutrilabel"
+version = "0.1.0"
+description = "Python package capability inspector that generates a Nutrition Facts label and version capability diffs before installation."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [
+    { name = "Dharmogata", email = "spectacle2002@gmail.com" }
+]
+keywords = ["packaging", "pypi", "ast", "dependencies", "nutrition-label", "transparency", "cli"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: System :: Software Distribution",
+]
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/Dharmogata/nutrilabel"
+Issues = "https://github.com/Dharmogata/nutrilabel/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "coverage>=7",
+    "ruff>=0.9",
+]
+
+[project.scripts]
+nutrilabel = "nutrilabel.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
